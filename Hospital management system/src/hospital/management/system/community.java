@@ -3,12 +3,15 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package hospital.management.system;
+import java.util.ArrayList;
 
 /**
  *
  * @author SHREYAS
  */
-public class system {
-    
-    
+public class community {
 }
+    
+  
+    
+
