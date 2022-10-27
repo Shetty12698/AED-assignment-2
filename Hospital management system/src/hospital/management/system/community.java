@@ -10,6 +10,31 @@ import java.util.ArrayList;
  * @author SHREYAS
  */
 public class community {
+    private String communityname;
+    private ArrayList<house> communityhouses;
+    
+    public community(String communityname, ArrayList<house> communityhouses) {
+        this.communityname = communityname;
+        this.communityhouses =  communityhouses;
+    }
+
+    public String getCommunityname() {
+        return communityname;
+    }
+
+    public void setCommunityname(String communityname) {
+        this.communityname = communityname;
+    }
+
+    public ArrayList<house> getCommunityhouses() {
+        return communityhouses;
+    }
+
+    public void setCommunityhouses(ArrayList<house> communityhouses) {
+        this.communityhouses = communityhouses;
+    }
+
+    
 }
     
   
