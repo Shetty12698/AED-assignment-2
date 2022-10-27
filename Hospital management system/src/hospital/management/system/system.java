@@ -12,7 +12,7 @@ import java.util.List;
  */
 public class system {
     private patientdirectory Patientdirectory;
-    private persondirectory Persondirecory;
+    private persondirectory Persondirectory;
     private ArrayList<city> cities;
     
     public system(patientdirectory Patientdirectory, persondirectory Persondirectory, ArrayList<city> cities) {
@@ -31,11 +31,11 @@ public class system {
     }
 
     public persondirectory getPersondirecory() {
-        return Persondirecory;
+        return Persondirectory;
     }
 
     public void setPersondirecory(persondirectory Persondirecory) {
-        this.Persondirecory = Persondirecory;
+        this.Persondirectory = Persondirecory;
     }
 
     public ArrayList<city> getCities() {
