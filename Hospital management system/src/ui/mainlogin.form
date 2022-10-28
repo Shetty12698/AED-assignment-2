@@ -23,51 +23,85 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Component id="jLabel1" min="-2" pref="217" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-              <Component id="labeldoctor" min="-2" pref="175" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="113" max="-2" attributes="0"/>
-              <Component id="labelpatient" min="-2" pref="257" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
-              <Component id="jLabel2" min="-2" pref="291" max="-2" attributes="0"/>
-              <EmptySpace pref="809" max="32767" attributes="0"/>
+          <Group type="102" attributes="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="540" max="-2" attributes="0"/>
+                      <Component id="labelsystemadmin" min="-2" pref="229" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="135" max="-2" attributes="0"/>
+                      <Component id="labeladmin" min="-2" pref="217" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="buttondoctor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
+                      <Component id="buttonpatient" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
+                      <Component id="buttonsystemadmin" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="243" max="-2" attributes="0"/>
+                      <Component id="buttonadmin" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                      <Component id="labeldoctor" linkSize="4" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Component id="labelpatient" linkSize="4" min="-2" pref="175" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="221" max="-2" attributes="0"/>
+                      <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+              <EmptySpace pref="970" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="106" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="jLabel1" linkSize="3" alignment="0" min="-2" pref="166" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                      <Component id="labeldoctor" alignment="3" max="32767" attributes="0"/>
-                      <Component id="labelpatient" linkSize="3" alignment="3" min="-2" pref="148" max="-2" attributes="0"/>
-                      <Component id="jLabel2" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="labelsystemadmin" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labeladmin" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labeldoctor" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="labelpatient" linkSize="3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="buttonadmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonsystemadmin" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="buttonpatient" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="247" max="-2" attributes="0"/>
+                      <Component id="buttondoctor" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace pref="83" max="32767" attributes="0"/>
+              <EmptySpace pref="37" max="32767" attributes="0"/>
+              <Component id="jButton1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Component class="javax.swing.JLabel" name="jLabel2">
+    <Component class="javax.swing.JLabel" name="labeladmin">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\SHREYAS\OneDrive\Desktop\admin co.jpg"/>
+          <Image iconType="2" name="C:\Users\SHREYAS\OneDrive\Desktop\admin.jpg"/>
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="jLabel1">
+    <Component class="javax.swing.JLabel" name="labelsystemadmin">
       <Properties>
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-          <Image iconType="2" name="C:\Users\SHREYAS\OneDrive\Desktop\admin.png"/>
+          <Image iconType="2" name="C:\Users\SHREYAS\OneDrive\Desktop\system admin.jpg"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel1"/>
+        <Property name="text" type="java.lang.String" value="jLabel2"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labelpatient">
@@ -75,7 +109,7 @@
         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="2" name="C:\Users\SHREYAS\OneDrive\Desktop\patient.jpg"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="jLabel2"/>
+        <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="labeldoctor">
@@ -85,6 +119,46 @@
         </Property>
         <Property name="text" type="java.lang.String" value="jLabel3"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttondoctor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="doctor"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttondoctorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonpatient">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="patient"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonpatientActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonsystemadmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="system admin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonsystemadminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="buttonadmin">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="community admin"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="buttonadminActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jButton1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="cancel"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

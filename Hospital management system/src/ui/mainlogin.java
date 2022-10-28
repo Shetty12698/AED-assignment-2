@@ -26,57 +26,161 @@ public class mainlogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        labeladmin = new javax.swing.JLabel();
+        labelsystemadmin = new javax.swing.JLabel();
         labelpatient = new javax.swing.JLabel();
         labeldoctor = new javax.swing.JLabel();
+        buttondoctor = new javax.swing.JButton();
+        buttonpatient = new javax.swing.JButton();
+        buttonsystemadmin = new javax.swing.JButton();
+        buttonadmin = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\SHREYAS\\OneDrive\\Desktop\\admin co.jpg")); // NOI18N
-        jLabel2.setText("jLabel2");
+        labeladmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\SHREYAS\\OneDrive\\Desktop\\admin.jpg")); // NOI18N
+        labeladmin.setText("jLabel2");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\SHREYAS\\OneDrive\\Desktop\\admin.png")); // NOI18N
-        jLabel1.setText("jLabel1");
+        labelsystemadmin.setIcon(new javax.swing.ImageIcon("C:\\Users\\SHREYAS\\OneDrive\\Desktop\\system admin.jpg")); // NOI18N
+        labelsystemadmin.setText("jLabel2");
 
         labelpatient.setIcon(new javax.swing.ImageIcon("C:\\Users\\SHREYAS\\OneDrive\\Desktop\\patient.jpg")); // NOI18N
-        labelpatient.setText("jLabel2");
+        labelpatient.setText("jLabel3");
 
         labeldoctor.setIcon(new javax.swing.ImageIcon("C:\\Users\\SHREYAS\\OneDrive\\Desktop\\doctor.jpg")); // NOI18N
         labeldoctor.setText("jLabel3");
+
+        buttondoctor.setText("doctor");
+        buttondoctor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttondoctorActionPerformed(evt);
+            }
+        });
+
+        buttonpatient.setText("patient");
+        buttonpatient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonpatientActionPerformed(evt);
+            }
+        });
+
+        buttonsystemadmin.setText("system admin");
+        buttonsystemadmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonsystemadminActionPerformed(evt);
+            }
+        });
+
+        buttonadmin.setText("community admin");
+        buttonadmin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonadminActionPerformed(evt);
+            }
+        });
+
+        jButton1.setText("cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(114, 114, 114)
-                .addComponent(labeldoctor, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(113, 113, 113)
-                .addComponent(labelpatient, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(109, 109, 109)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 291, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(809, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(540, 540, 540)
+                        .addComponent(labelsystemadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(135, 135, 135)
+                        .addComponent(labeladmin, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(40, 40, 40)
+                        .addComponent(buttondoctor)
+                        .addGap(205, 205, 205)
+                        .addComponent(buttonpatient)
+                        .addGap(154, 154, 154)
+                        .addComponent(buttonsystemadmin)
+                        .addGap(243, 243, 243)
+                        .addComponent(buttonadmin))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(labeldoctor)
+                        .addGap(74, 74, 74)
+                        .addComponent(labelpatient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(221, 221, 221)
+                        .addComponent(jButton1)))
+                .addContainerGap(970, Short.MAX_VALUE))
         );
+
+        layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {labeldoctor, labelpatient});
+
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(106, 106, 106)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(labeldoctor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(labelpatient, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel2)))
-                .addContainerGap(83, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(labelsystemadmin)
+                            .addComponent(labeladmin)
+                            .addComponent(labeldoctor)
+                            .addComponent(labelpatient))
+                        .addGap(44, 44, 44)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttonadmin)
+                            .addComponent(buttonsystemadmin)
+                            .addComponent(buttonpatient)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(247, 247, 247)
+                        .addComponent(buttondoctor)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(19, 19, 19))
         );
 
-        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jLabel1, jLabel2, labelpatient});
+        layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {labeladmin, labeldoctor, labelpatient, labelsystemadmin});
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttonadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonadminActionPerformed
+        // TODO add your handling code here:
+        communityadminlogin ca = new communityadminlogin();
+        ca.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonadminActionPerformed
+
+    private void buttondoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttondoctorActionPerformed
+        // TODO add your handling code here:
+        doctorlogin dl = new doctorlogin();
+        dl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttondoctorActionPerformed
+
+    private void buttonpatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonpatientActionPerformed
+        // TODO add your handling code here:
+        patientlogin pl = new patientlogin();
+        pl.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonpatientActionPerformed
+
+    private void buttonsystemadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonsystemadminActionPerformed
+        // TODO add your handling code here:
+        systemadminlogin sa = new systemadminlogin();
+        sa.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_buttonsystemadminActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        this.hide();
+        login lo = new login();
+        lo.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -114,9 +218,14 @@ public class mainlogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JButton buttonadmin;
+    private javax.swing.JButton buttondoctor;
+    private javax.swing.JButton buttonpatient;
+    private javax.swing.JButton buttonsystemadmin;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel labeladmin;
     private javax.swing.JLabel labeldoctor;
     private javax.swing.JLabel labelpatient;
+    private javax.swing.JLabel labelsystemadmin;
     // End of variables declaration//GEN-END:variables
 }
