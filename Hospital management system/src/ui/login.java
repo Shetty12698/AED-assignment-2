@@ -3,6 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package ui;
+import javax.swing.JOptionPane;
+import java.awt.Toolkit;
+import java.awt.event.WindowEvent;
+import javax.swing.*;
 
 /**
  *
@@ -49,6 +53,12 @@ public class login extends javax.swing.JFrame {
         labelpassword.setText("Password");
 
         labelrole.setText("Role");
+
+        textlogin.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textloginActionPerformed(evt);
+            }
+        });
 
         buttonlogin.setText("Login");
         buttonlogin.addActionListener(new java.awt.event.ActionListener() {
@@ -134,21 +144,34 @@ public class login extends javax.swing.JFrame {
 
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
         // TODO add your handling code here:
-        String Password = tfPassword.getText();
-        String Login = tfLogin.getText();
+        String password = textlogin.getText();
+        String login = textpassword.getText();
         
-        if(tfPassword.getText().equals("admin126")&& tflogin.getText().equals("Admin") || tfPassword.getText().equals("Doctor126")&& tflogin.getText().equals("Doctor") || tfPassword.getText().equals("Community126")&& tflogin.getText().equals("community") || tfpassword.getText().equals("patient126") && tflogin.getText().equals("Patient"))
+        if(textpassword.getText().equals("admin126")&& textlogin.getText().equals("Admin") || textpassword.getText().equals("Doctor126")&& textlogin.getText().equals("Doctor") || textpassword.getText().equals("Community126")&& textlogin.getText().equals("community") || textpassword.getText().equals("patient126") && textlogin.getText().equals("Patient"))
         {
-            tfPassword.setText("");
-            tflogin.setText("");
+            textpassword.setText("");
+            textlogin.setText("");
+        login lp = new login();
+        lp.setVisible(true);
+        this.dispose();
             
         }
-        else if(tfPassword.getText().equals("") || tflogin.getText().equals(""))
+        else if(textpassword.getText().equals("") || textlogin.getText().equals(""))
         {
-            JoptionPane.showMessageDialog(this, "")
+            JOptionPane.showMessageDialog(this, "Please enter the details");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(this, "username and password are incorrect");
+            textlogin.setText("");
+            textpassword.setText("");
         }
             
     }//GEN-LAST:event_buttonloginActionPerformed
+
+    private void textloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textloginActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textloginActionPerformed
 
     /**
      * @param args the command line arguments

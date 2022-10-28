@@ -139,6 +139,9 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JTextField" name="textlogin">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="textloginActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="textpassword">
         </Component>

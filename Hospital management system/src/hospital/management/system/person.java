@@ -13,12 +13,15 @@ public class person {
     private String name;
     private double age;
     private patient Patient;
+    private String password;
+    private String login;
     
-    
-    public person(String name, double age, patient Patient) {
+    public person(String name, double age, patient Patient, String password, String login) {
         this.name = name;
         this.age = age;
         this.Patient = Patient;
+        this.password = password;
+        this.login = login;
     }
     
 
@@ -45,6 +48,23 @@ public class person {
     public void setPatient(patient Patient) {
         this.Patient = Patient;
     }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+    
     
     
     
