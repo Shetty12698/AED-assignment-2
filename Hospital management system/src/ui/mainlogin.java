@@ -156,7 +156,7 @@ public class mainlogin extends javax.swing.JFrame {
 
     private void buttondoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttondoctorActionPerformed
         // TODO add your handling code here:
-        doctorlogin dl = new doctorlogin();
+        doctorsubform dl = new doctorsubform();
         dl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttondoctorActionPerformed
