@@ -4,6 +4,8 @@
  */
 package ui;
 
+import java.awt.CardLayout;
+
 /**
  *
  * @author SHREYAS
@@ -26,31 +28,130 @@ public class communityadminlogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        buttonviewupdate = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        buttoncreate = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        buttondelete = new javax.swing.JButton();
+        buttoncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("cancel");
+        buttonviewupdate.setText("view/update");
+        buttonviewupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonviewupdateActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
+        jLabel1.setText("display cities");
+
+        buttoncreate.setText("create");
+        buttoncreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttoncreateActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "city name", "update on", "created on", "created by"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        buttondelete.setText("delete");
+        buttondelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttondeleteActionPerformed(evt);
+            }
+        });
+
+        buttoncancel.setText("cancel");
+        buttoncancel.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttoncancelActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 624, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(buttoncancel)
+                .addGap(248, 248, 248))
             .addGroup(layout.createSequentialGroup()
-                .addGap(251, 251, 251)
-                .addComponent(jButton1)
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(226, 226, 226)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addComponent(buttoncreate)
+                        .addGap(101, 101, 101)
+                        .addComponent(buttonviewupdate)
+                        .addGap(75, 75, 75)
+                        .addComponent(buttondelete)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(170, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(107, 107, 107))
+                .addGap(15, 15, 15)
+                .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttoncreate)
+                            .addComponent(buttonviewupdate)
+                            .addComponent(buttondelete))
+                        .addGap(63, 63, 63)))
+                .addComponent(buttoncancel)
+                .addGap(72, 72, 72))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void buttoncreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttoncreateActionPerformed
+        // TODO add your handling code here:
+        AddCityJPanel addCityJPanel = new AddCityJPanel(displayJPanel,system);
+        displayJPanel.add("AddCityPanel", addCityJPanel);
+        CardLayout cardLayout = (CardLayout) displayJPanel.getLayout();
+        cardLayout.next(displayJPanel);
+    }//GEN-LAST:event_buttoncreateActionPerformed
+
+    private void buttonviewupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonviewupdateActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_buttonviewupdateActionPerformed
+
+    private void buttoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttoncancelActionPerformed
+        // TODO add your handling code here:
+        this.hide();
+        mainlogin lo = new mainlogin();
+        lo.setVisible(true);
+    }//GEN-LAST:event_buttoncancelActionPerformed
+
+    private void buttondeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttondeleteActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_buttondeleteActionPerformed
 
     /**
      * @param args the command line arguments
@@ -89,6 +190,12 @@ public class communityadminlogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton buttoncancel;
+    private javax.swing.JButton buttoncreate;
+    private javax.swing.JButton buttondelete;
+    private javax.swing.JButton buttonviewupdate;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

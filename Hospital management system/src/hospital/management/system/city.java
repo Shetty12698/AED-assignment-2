@@ -5,52 +5,53 @@
 package hospital.management.system;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
  *
  * @author SHREYAS
  */
-public class city {
-    private String cityName;
+public class city extends modificationinfo {
+    private cityname cityName;
     
-    private ArrayList<community> Communities;
-    
-    public city(String cityname, ArrayList<community> Communities) {
-        this.cityName = cityName;
-        this.Communities = Communities;
-    }        
-        public city(String cityName) {
-            this.cityName = cityName;
-            this.Communities = new ArrayList<community>();
-        }
+    private List<community> communities;
 
-    public String getCityName() {
+    public City(cityname cityName, List<community> communities, Date createdDate, Date lastUpdatedDate, String createdBy, String modifiedBy) {
+        super(createdDate, lastUpdatedDate, createdBy, modifiedBy);
+        this.cityName=cityName;
+        this.communities=communities;
+    }
+    
+    public cityname getCityName() {
         return cityName;
     }
 
-    public void setCityName(String cityName) {
+    public void setCityName(cityname cityName) {
         this.cityName = cityName;
     }
+    
+    public List<community> getCommunities() {
+        return communities;
+    }
+
+    public void setCommunities(List<community> communities) {
+        this.communities = communities;
+    }    
+
+    @Override
+    public String toString() {
+        return cityName.name();
+    }
+    
+}
+
+    
+    
         
 
    
 
-    public ArrayList<community> getCommunities() {
-        return Communities;
-    }
-     public void addcommunity(community Community){
-        this.Communities.add(Community);
-         
-     }
-     public void addCommunities(ArrayList<community> Communities){
-         this.Communities.addAll(Communities);
-         
-     }
-     public void setCommunities(ArrayList<community> communities) {
-         this.Communities = Communities;
-         
-     }
-        }
+   
     
 

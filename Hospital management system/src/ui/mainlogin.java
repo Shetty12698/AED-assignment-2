@@ -35,6 +35,7 @@ public class mainlogin extends javax.swing.JFrame {
         buttonsystemadmin = new javax.swing.JButton();
         buttonadmin = new javax.swing.JButton();
         buttoncancel = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -85,6 +86,13 @@ public class mainlogin extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setText("hospital admin ");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -92,28 +100,31 @@ public class mainlogin extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(540, 540, 540)
-                        .addComponent(labelsystemadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(135, 135, 135)
-                        .addComponent(labeladmin, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(buttondoctor)
-                        .addGap(205, 205, 205)
-                        .addComponent(buttonpatient)
-                        .addGap(154, 154, 154)
-                        .addComponent(buttonsystemadmin)
-                        .addGap(243, 243, 243)
-                        .addComponent(buttonadmin))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(labeldoctor)
-                        .addGap(74, 74, 74)
-                        .addComponent(labelpatient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(221, 221, 221)
-                        .addComponent(buttoncancel)))
-                .addContainerGap(970, Short.MAX_VALUE))
+                        .addComponent(buttoncancel))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(35, 35, 35)
+                                .addComponent(buttondoctor)
+                                .addGap(169, 169, 169)
+                                .addComponent(buttonpatient)
+                                .addGap(195, 195, 195)
+                                .addComponent(buttonsystemadmin)
+                                .addGap(198, 198, 198)
+                                .addComponent(buttonadmin)
+                                .addGap(45, 45, 45))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(labeldoctor)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(labelpatient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(79, 79, 79)
+                                .addComponent(labelsystemadmin, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(76, 76, 76)
+                                .addComponent(labeladmin, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(120, 120, 120)
+                        .addComponent(jButton1)))
+                .addContainerGap(842, Short.MAX_VALUE))
         );
 
         layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {labeldoctor, labelpatient});
@@ -121,23 +132,25 @@ public class mainlogin extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(235, 235, 235)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(labelsystemadmin)
-                            .addComponent(labeladmin)
-                            .addComponent(labeldoctor)
-                            .addComponent(labelpatient))
+                            .addComponent(buttondoctor)
+                            .addComponent(buttonpatient)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(labelsystemadmin)
+                                .addComponent(labelpatient)
+                                .addComponent(labeldoctor))
+                            .addComponent(labeladmin))
                         .addGap(44, 44, 44)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttonadmin)
                             .addComponent(buttonsystemadmin)
-                            .addComponent(buttonpatient)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(247, 247, 247)
-                        .addComponent(buttondoctor)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
+                            .addComponent(jButton1))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
                 .addComponent(buttoncancel)
                 .addGap(19, 19, 19))
         );
@@ -182,6 +195,14 @@ public class mainlogin extends javax.swing.JFrame {
         lo.setVisible(true);
     }//GEN-LAST:event_buttoncancelActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        hospitalentertoaccess ml = new hospitalentertoaccess();
+        ml.setVisible(true);
+        this.dispose();
+        
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -223,6 +244,7 @@ public class mainlogin extends javax.swing.JFrame {
     private javax.swing.JButton buttondoctor;
     private javax.swing.JButton buttonpatient;
     private javax.swing.JButton buttonsystemadmin;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labeladmin;
     private javax.swing.JLabel labeldoctor;
     private javax.swing.JLabel labelpatient;

@@ -26,7 +26,7 @@ public class doctorlogin extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        labelpatientdirectory = new javax.swing.JLabel();
         labelhospitalvisit = new javax.swing.JLabel();
         buttoncreate = new javax.swing.JButton();
         labelgender = new javax.swing.JLabel();
@@ -59,8 +59,8 @@ public class doctorlogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jLabel1.setText("patient directory");
+        labelpatientdirectory.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        labelpatientdirectory.setText("patient directory");
 
         labelhospitalvisit.setText("hospital visit");
 
@@ -149,7 +149,7 @@ public class doctorlogin extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(228, 228, 228)
-                                .addComponent(jLabel1))
+                                .addComponent(labelpatientdirectory))
                             .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(labelbmi))
@@ -224,7 +224,7 @@ public class doctorlogin extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(23, 23, 23)
-                .addComponent(jLabel1)
+                .addComponent(labelpatientdirectory)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(110, 110, 110)
@@ -352,7 +352,6 @@ public class doctorlogin extends javax.swing.JFrame {
     private javax.swing.JTextField fieldpulse;
     private javax.swing.JTextField fieldrespirationrate;
     private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JLabel labelage;
@@ -363,6 +362,7 @@ public class doctorlogin extends javax.swing.JFrame {
     private javax.swing.JLabel labelgender;
     private javax.swing.JLabel labelhospitalvisit;
     private javax.swing.JLabel labelname;
+    private javax.swing.JLabel labelpatientdirectory;
     private javax.swing.JLabel labelpulse;
     private javax.swing.JLabel labelrespirationrate;
     private javax.swing.JLabel labeluid;
