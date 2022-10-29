@@ -145,8 +145,8 @@ public class login extends javax.swing.JFrame {
 
     private void buttonloginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonloginActionPerformed
         // TODO add your handling code here:
-        String password = textlogin.getText();
-        String login = textpassword.getText();
+        String password = textpassword.getText();
+        String login = textlogin.getText();
         
         if(textpassword.getText().equals("admin126")&& textlogin.getText().equals("Admin") || textpassword.getText().equals("Doctor126")&& textlogin.getText().equals("Doctor") || textpassword.getText().equals("Community126")&& textlogin.getText().equals("community") || textpassword.getText().equals("patient126") && textlogin.getText().equals("Patient"))
         {

@@ -34,7 +34,7 @@ public class mainlogin extends javax.swing.JFrame {
         buttonpatient = new javax.swing.JButton();
         buttonsystemadmin = new javax.swing.JButton();
         buttonadmin = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        buttoncancel = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -78,10 +78,10 @@ public class mainlogin extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttoncancel.setText("cancel");
+        buttoncancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttoncancelActionPerformed(evt);
             }
         });
 
@@ -112,7 +112,7 @@ public class mainlogin extends javax.swing.JFrame {
                         .addComponent(labelpatient, javax.swing.GroupLayout.PREFERRED_SIZE, 175, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(221, 221, 221)
-                        .addComponent(jButton1)))
+                        .addComponent(buttoncancel)))
                 .addContainerGap(970, Short.MAX_VALUE))
         );
 
@@ -138,7 +138,7 @@ public class mainlogin extends javax.swing.JFrame {
                         .addGap(247, 247, 247)
                         .addComponent(buttondoctor)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 37, Short.MAX_VALUE)
-                .addComponent(jButton1)
+                .addComponent(buttoncancel)
                 .addGap(19, 19, 19))
         );
 
@@ -149,38 +149,38 @@ public class mainlogin extends javax.swing.JFrame {
 
     private void buttonadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonadminActionPerformed
         // TODO add your handling code here:
-        communityadminlogin ca = new communityadminlogin();
+        communityentertoaccess ca = new communityentertoaccess();
         ca.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonadminActionPerformed
 
     private void buttondoctorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttondoctorActionPerformed
         // TODO add your handling code here:
-        doctorsubform dl = new doctorsubform();
+        doctorenteraccess dl = new doctorenteraccess();
         dl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttondoctorActionPerformed
 
     private void buttonpatientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonpatientActionPerformed
         // TODO add your handling code here:
-        patientlogin pl = new patientlogin();
+        patiententertoaccess pl = new patiententertoaccess();
         pl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonpatientActionPerformed
 
     private void buttonsystemadminActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonsystemadminActionPerformed
         // TODO add your handling code here:
-        systemadminlogin sa = new systemadminlogin();
+        systemadminaccess sa = new systemadminaccess();
         sa.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_buttonsystemadminActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttoncancelActionPerformed
         // TODO add your handling code here:
         this.hide();
         login lo = new login();
         lo.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttoncancelActionPerformed
 
     /**
      * @param args the command line arguments
@@ -219,10 +219,10 @@ public class mainlogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonadmin;
+    private javax.swing.JButton buttoncancel;
     private javax.swing.JButton buttondoctor;
     private javax.swing.JButton buttonpatient;
     private javax.swing.JButton buttonsystemadmin;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel labeladmin;
     private javax.swing.JLabel labeldoctor;
     private javax.swing.JLabel labelpatient;
