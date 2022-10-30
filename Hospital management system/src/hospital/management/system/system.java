@@ -11,38 +11,38 @@ import java.util.List;
  * @author SHREYAS
  */
 public class system {
-    private patientdirectory Patientdirectory;
-    private persondirectory Persondirectory;
-    private ArrayList<city> cities;
+    private PatientDirectory Patientdirectory;
+    private PersonDirectory Persondirectory;
+    private ArrayList<City> cities;
     
-    public system(patientdirectory Patientdirectory, persondirectory Persondirectory, ArrayList<city> cities) {
+    public system(PatientDirectory Patientdirectory, PersonDirectory Persondirectory, ArrayList<City> cities) {
         this.Patientdirectory = Patientdirectory;
         this.Persondirectory = Persondirectory;
         this.cities = cities;
         
     }
 
-    public patientdirectory getPatientdirectory() {
+    public PatientDirectory getPatientdirectory() {
         return Patientdirectory;
     }
 
-    public void setPatientdirectory(patientdirectory Patientdirectory) {
+    public void setPatientdirectory(PatientDirectory Patientdirectory) {
         this.Patientdirectory = Patientdirectory;
     }
 
-    public persondirectory getPersondirecory() {
+    public PersonDirectory getPersondirecory() {
         return Persondirectory;
     }
 
-    public void setPersondirecory(persondirectory Persondirecory) {
+    public void setPersondirecory(PersonDirectory Persondirecory) {
         this.Persondirectory = Persondirecory;
     }
 
-    public ArrayList<city> getCities() {
+    public ArrayList<City> getCities() {
         return cities;
     }
 
-    public void setCities(ArrayList<city> cities) {
+    public void setCities(ArrayList<City> cities) {
         this.cities = cities;
     }
     

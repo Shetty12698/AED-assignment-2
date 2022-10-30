@@ -11,93 +11,77 @@ package hospital.management.system;
 
 
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
-public class vitalsigns {
-    private double temperature;
-    private int pulse;
-    private int respirationrate;
-    private double sp02;
-    private double bmi;
-    private String Generated;
-    private String Modified;
+
+public class VitalSigns extends Patient {
+    public float bldPressure;
+    public float sugarLevel;
+    public String allergies;
+    public float bodyTemp;
+    public float heartRate;
     
-    public vitalsigns ( double temperature, int pulse, int respirationrate, double sp02, double bmi){
-       this.temperature = temperature;
-       this.pulse = pulse;
-       this.respirationrate = respirationrate;
-       this.sp02 = sp02;
-       this.bmi = bmi;
-       this.Generated = formatDate(new Date());
-       this.Modified = formatDate(new Date());
-       
+    
+    
+    public VitalSigns(){
     }
     
-    public vitalsigns() {
-        
+    public VitalSigns(String name, int patientId){
+    
+    this.name = name;
+    this.patientId = patientId;
     }
-    private String formatDate(Date date){
-        String pattern = "yyyy-MM-dd HH:mm:ss";
-        SimpleDateFormat  simpleDateFormat = new SimpleDateFormat (pattern);
-        return simpleDateFormat.format(date);
-        
+    
+  
+    
+    public VitalSigns(float bldPressure,float sugarLevel, String allergies, float bodyTemp, float heartRate){
+        this.bldPressure = bldPressure;
+        this.sugarLevel = sugarLevel;
+        this.allergies = allergies;
+        this.bodyTemp = bodyTemp;
+        this.bodyTemp = bodyTemp;
+    }
+    
+    
+
+    public float getBldPressure() {
+        return bldPressure;
     }
 
-    public double getTemperature() {
-        return temperature;
+    public void setBldPressure(float bldPressure) {
+        this.bldPressure = bldPressure;
     }
 
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public float getSugarLevel() {
+        return sugarLevel;
     }
 
-    public int getPulse() {
-        return pulse;
+    public void setSugarLevel(float sugarLevel) {
+        this.sugarLevel = sugarLevel;
     }
 
-    public void setPulse(int pulse) {
-        this.pulse = pulse;
+    public String getAllergies() {
+        return allergies;
     }
 
-    public int getRespirationrate() {
-        return respirationrate;
+    public void setAllergies(String allergies) {
+        this.allergies = allergies;
     }
 
-    public void setRespirationrate(int respirationrate) {
-        this.respirationrate = respirationrate;
+    public float getBodyTemp() {
+        return bodyTemp;
     }
 
-    public double getSp02() {
-        return sp02;
+    public void setBodyTemp(float bodyTemp) {
+        this.bodyTemp = bodyTemp;
     }
 
-    public void setSp02(double sp02) {
-        this.sp02 = sp02;
+    public float getHeartRate() {
+        return heartRate;
     }
 
-    public double getBmi() {
-        return bmi;
+    public void setHeartRate(float heartRate) {
+        this.heartRate = heartRate;
     }
-
-    public void setBmi(double bmi) {
-        this.bmi = bmi;
-    }
-
-    public String getGenerated() {
-        return Generated;
-    }
-
-    public void setGenerated(String Generated) {
-        this.Generated = Generated;
-    }
-
-    public String getModified() {
-        return Modified;
-    }
-
-    public void setModified(String Modified) {
-        this.Modified = Modified;
-    }
+    
     
     
 }

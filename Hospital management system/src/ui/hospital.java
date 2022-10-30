@@ -4,11 +4,41 @@
  */
 package ui;
 
+import hospital.management.system.DoctorDirectory;
+import hospital.management.system.Hospital;
+import hospital.management.system.HospitalDirectory;
+import hospital.management.system.Patient;
+import hospital.management.system.PatientDirectory;
+import hospital.management.system.Person;
+import hospital.management.system.PersonDirectory;
+import hospital.management.system.VitalSigns;
+import hospital.management.system.VitalSignsHistory;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author SHREYAS
  */
 public class hospital extends javax.swing.JFrame {
+    Person person = new Person();
+    VitalSigns vitalSigns = new VitalSigns();
+    Patient patient = new Patient();
+    VitalSignsHistory vitalDir;
+    PatientDirectory patientDir;
+    PersonDirectory personDir;
+    HospitalDirectory hospitalDir;
+    DoctorDirectory records;
+    
+    
+    public hospital( HospitalDirectory hospitalDir) {
+        initComponents();
+        
+        this.hospitalDir = hospitalDir;
+   
+        hospDispTable();
+        
+    }
 
     /**
      * Creates new form hospital
@@ -26,43 +56,342 @@ public class hospital extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
+        buttoncancel = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        hNametxt = new javax.swing.JLabel();
+        labellicenseno = new javax.swing.JLabel();
+        labelnoofwords = new javax.swing.JLabel();
+        fieldname = new javax.swing.JTextField();
+        hLicenseNumbertxt = new javax.swing.JTextField();
+        hNoWardstxt = new javax.swing.JTextField();
+        labelhospitaldetails = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        labeladdressdetails = new javax.swing.JLabel();
+        labelcommunity = new javax.swing.JLabel();
+        labeladdress = new javax.swing.JLabel();
+        labelzipcode = new javax.swing.JLabel();
+        labelcity = new javax.swing.JLabel();
+        labelstate = new javax.swing.JLabel();
+        hAddresstxt = new javax.swing.JTextField();
+        hCommunitytxt = new javax.swing.JTextField();
+        hZipCodetxt = new javax.swing.JTextField();
+        hCitytxt = new javax.swing.JTextField();
+        hStatetxt = new javax.swing.JTextField();
+        buttoncreate = new javax.swing.JButton();
+        buttonview = new javax.swing.JButton();
+        buttonupdate = new javax.swing.JButton();
+        buttondelete = new javax.swing.JButton();
+        fieldsearch = new javax.swing.JTextField();
+        buttonsearch = new javax.swing.JButton();
+        labelhospitalregistration = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        HospitalTable = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1.setText("cancel");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        buttoncancel.setText("cancel");
+        buttoncancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                buttoncancelActionPerformed(evt);
             }
         });
+
+        jPanel1.setBackground(new java.awt.Color(255, 204, 204));
+
+        hNametxt.setText("name");
+
+        labellicenseno.setText("license no");
+
+        labelnoofwords.setText("no of wards");
+
+        labelhospitaldetails.setText("hospital details");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelhospitaldetails)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(hNametxt)
+                            .addComponent(labelnoofwords)
+                            .addComponent(labellicenseno))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 78, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(fieldname, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hLicenseNumbertxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(hNoWardstxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(66, 66, 66))))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(labelhospitaldetails)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(hNametxt)
+                    .addComponent(fieldname, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(25, 25, 25)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labellicenseno)
+                    .addComponent(hLicenseNumbertxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(30, 30, 30)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelnoofwords)
+                    .addComponent(hNoWardstxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(62, Short.MAX_VALUE))
+        );
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 204));
+
+        labeladdressdetails.setText("address details");
+
+        labelcommunity.setText("community");
+
+        labeladdress.setText("address");
+
+        labelzipcode.setText("zipcode");
+
+        labelcity.setText("city");
+
+        labelstate.setText("state");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(labelstate)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hStatetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(labelcity)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hCitytxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(labelzipcode)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hZipCodetxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(labelcommunity)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hCommunitytxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(labeladdress)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(hAddresstxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(labeladdressdetails)
+                        .addGap(111, 111, 111)))
+                .addContainerGap(105, Short.MAX_VALUE))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(labeladdressdetails)
+                        .addGap(45, 45, 45)
+                        .addComponent(labeladdress))
+                    .addComponent(hAddresstxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelcommunity)
+                    .addComponent(hCommunitytxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(31, 31, 31)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelzipcode)
+                    .addComponent(hZipCodetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(24, 24, 24)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelcity)
+                    .addComponent(hCitytxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelstate)
+                    .addComponent(hStatetxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(12, 12, 12))
+        );
+
+        buttoncreate.setText("create");
+        buttoncreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttoncreateActionPerformed(evt);
+            }
+        });
+
+        buttonview.setText("view");
+        buttonview.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonviewActionPerformed(evt);
+            }
+        });
+
+        buttonupdate.setText("update");
+        buttonupdate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonupdateActionPerformed(evt);
+            }
+        });
+
+        buttondelete.setText("delete");
+
+        buttonsearch.setText("search");
+
+        labelhospitalregistration.setText("hospital registration");
+
+        HospitalTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "license no", "name", "address", "community", "city", "state", "zip code", "no of wards"
+            }
+        ));
+        jScrollPane1.setViewportView(HospitalTable);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(222, 222, 222)
-                .addComponent(jButton1)
-                .addContainerGap(321, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(buttoncancel)
+                                .addGap(229, 229, 229)
+                                .addComponent(labelhospitalregistration)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(14, 14, 14)
+                                .addComponent(buttoncreate)
+                                .addGap(71, 71, 71)
+                                .addComponent(buttonview)
+                                .addGap(82, 82, 82)
+                                .addComponent(buttonupdate)
+                                .addGap(89, 89, 89)
+                                .addComponent(buttondelete))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(37, 37, 37)
+                        .addComponent(fieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(120, 120, 120)
+                        .addComponent(buttonsearch))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 621, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(125, 347, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(166, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(111, 111, 111))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(buttoncancel)
+                            .addComponent(labelhospitalregistration))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(23, 23, 23)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(buttoncreate)
+                    .addComponent(buttonview)
+                    .addComponent(buttonupdate)
+                    .addComponent(buttondelete))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(58, 58, 58)
+                        .addComponent(fieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(49, 49, 49)
+                        .addComponent(buttonsearch)))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(59, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void buttoncancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttoncancelActionPerformed
         // TODO add your handling code here:
         this.hide();
         hospitalentertoaccess lo = new hospitalentertoaccess();
         lo.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_buttoncancelActionPerformed
+
+    private void buttonupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonupdateActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex1=HospitalTable.getSelectedRow();
+        DefaultTableModel model1 = (DefaultTableModel) HospitalTable.getModel();
+        Hospital selectedHosp=(Hospital)model1.getValueAt(selectedRowIndex1,0);
+        selectedHosp.setHospitalName(hNametxt.getText());
+        selectedHosp.setHospitalLincenseNumber(Integer.parseInt(hLicenseNumbertxt.getText()));
+        selectedHosp.setHospitalAddress((hAddresstxt.getText()));
+        selectedHosp.residence.setCommunityName(hCommunitytxt.getText()) ;
+        selectedHosp.residence.zip = Integer.parseInt(hZipCodetxt.getText());
+        selectedHosp.residence.cityName = hCitytxt.getText();
+        selectedHosp.residence.state = hStatetxt.getText();
+        selectedHosp.setHospitalWard(Integer.parseInt(hNoWardstxt.getText()));
+        hospDispTable();
+    }//GEN-LAST:event_buttonupdateActionPerformed
+
+    private void buttoncreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttoncreateActionPerformed
+        // TODO add your handling code here:
+        Hospital hosp=new Hospital();
+        hosp.setHospitalName(hNametxt.getText());
+        //        pt1.person.setAge(Integer.parseInt(patientAge.getText()));
+        hosp.setHospitalLincenseNumber(Integer.parseInt(hLicenseNumbertxt.getText()));
+        hosp.setHospitalAddress((hAddresstxt.getText()));
+        hosp.residence.setCommunityName(hCommunitytxt.getText()) ;
+        hosp.residence.zip = Integer.parseInt(hZipCodetxt.getText());
+        hosp.residence.cityName = hCitytxt.getText();
+        hosp.residence.state = hStatetxt.getText();
+        hosp.setHospitalWard(Integer.parseInt(hNoWardstxt.getText()));
+
+        HospitalDirectory.hospitalList.add(hosp);
+        JOptionPane.showMessageDialog(this, "Person Successfully Added");
+        hospDispTable();
+    }//GEN-LAST:event_buttoncreateActionPerformed
+
+    private void buttonviewActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonviewActionPerformed
+        // TODO add your handling code here:
+        int selectedRowIndex1=HospitalTable.getSelectedRow();
+        if (selectedRowIndex1<0){
+            JOptionPane.showMessageDialog(this,"Please select a row to View");
+            return;
+        }
+        DefaultTableModel model1 = (DefaultTableModel) HospitalTable.getModel();
+        Hospital selectedHosp=(Hospital)model1.getValueAt(selectedRowIndex1,0);
+        hNametxt.setText(selectedHosp.getHospitalName());
+        hLicenseNumbertxt.setText(String.valueOf(selectedHosp.getHospitalLincenseNumber()));
+        hNoWardstxt.setText(String.valueOf(selectedHosp.getHospitalWard()));
+        hZipCodetxt.setText(String.valueOf(selectedHosp.residence.getZip()));
+        hCommunitytxt.setText(selectedHosp.residence.getCommunityName());
+        hAddresstxt.setText(selectedHosp.getHospitalAddress());
+        hCitytxt.setText(selectedHosp.residence.getCityName());
+        hStatetxt.setText(selectedHosp.residence.getState());
+    }//GEN-LAST:event_buttonviewActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,8 +427,55 @@ public class hospital extends javax.swing.JFrame {
             }
         });
     }
+    public void hospDispTable(){
+        DefaultTableModel model1 = (DefaultTableModel) HospitalTable.getModel();
+        model1.setRowCount(0);
+        System.out.println("Done");
+        for (Hospital h:HospitalDirectory.getHospitalList()){
+            Object[] row=new Object[8];
+            row[0]=h;
+            row[1]=h.getHospitalName();
+            row[2]=h.getHospitalAddress();
+            row[3]=h.residence.getCommunityName();
+            row[4]=h.residence.getCityName();
+            row[5]=h.residence.getState();
+            row[6]=h.residence.getZip();
+            row[7]=h.getHospitalWard();
+            model1.addRow(row);
+        }
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
+    private javax.swing.JTable HospitalTable;
+    private javax.swing.JButton buttoncancel;
+    private javax.swing.JButton buttoncreate;
+    private javax.swing.JButton buttondelete;
+    private javax.swing.JButton buttonsearch;
+    private javax.swing.JButton buttonupdate;
+    private javax.swing.JButton buttonview;
+    private javax.swing.JTextField fieldname;
+    private javax.swing.JTextField fieldsearch;
+    private javax.swing.JTextField hAddresstxt;
+    private javax.swing.JTextField hCitytxt;
+    private javax.swing.JTextField hCommunitytxt;
+    private javax.swing.JTextField hLicenseNumbertxt;
+    private javax.swing.JLabel hNametxt;
+    private javax.swing.JTextField hNoWardstxt;
+    private javax.swing.JTextField hStatetxt;
+    private javax.swing.JTextField hZipCodetxt;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labeladdress;
+    private javax.swing.JLabel labeladdressdetails;
+    private javax.swing.JLabel labelcity;
+    private javax.swing.JLabel labelcommunity;
+    private javax.swing.JLabel labelhospitaldetails;
+    private javax.swing.JLabel labelhospitalregistration;
+    private javax.swing.JLabel labellicenseno;
+    private javax.swing.JLabel labelnoofwords;
+    private javax.swing.JLabel labelstate;
+    private javax.swing.JLabel labelzipcode;
     // End of variables declaration//GEN-END:variables
 }

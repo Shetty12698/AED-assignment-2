@@ -8,67 +8,70 @@ package hospital.management.system;
  *
  * @author SHREYAS
  */
-public class Doctor {
-    private int doctorid;
-    private int age;
-    private String name;
-    private String disease;
-    private int number;
+public class Doctor extends Person{
     
+    public int doctorID;
+    private String qualification;
+    private String specialization;
+    private int slotsAvailable;
+    public Hospital hospital = new Hospital();
     
-    public Doctor(int doctorid,int age, int number){
-       this.doctorid = doctorid;
-       this.age = age;
-       this.name = name;
-       this.disease = disease;
-       this.number = number;
-       
-       
-        
+    public Doctor(){
     }
-
-    public int getDoctorid() {
-        return doctorid;
-    }
-
-    public void setDoctorid(int doctorid) {
-        this.doctorid = doctorid;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDisease() {
-        return disease;
-    }
-
-    public void setDisease(String disease) {
-        this.disease = disease;
-    }
-
-    public int getNumber() {
-        return number;
-    }
-
-    public void setNumber(int number) {
-        this.number = number;
-    }
-
     
+    public Doctor(String name, int age, long contactDetails, String emailId, String gender,String state, String houseNumber, String streetName, int zip, String cityName, String communityName, String password, int doctorID, String hospitalName, String qualification, String specialization, int slotsAvailable){
+        super(name, age, contactDetails, emailId, gender, state, houseNumber, streetName, zip, cityName,communityName, password);
+        this.doctorID = doctorID;
+        this.hospital.hospitalName = hospitalName;
+        this.qualification = qualification;
+        this.specialization = specialization;
+        this.slotsAvailable = slotsAvailable;
+    }
+
+    public int getDoctorID() {
+        return doctorID;
+    }
+
+    public void setDoctorID(int doctorID) {
+        this.doctorID = doctorID;
+    }
+
+    public String getQualification() {
+        return qualification;
+    }
+
+    public void setQualification(String qualification) {
+        this.qualification = qualification;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public int getSlotsAvailable() {
+        return slotsAvailable;
+    }
+
+    public void setSlotsAvailable(int slotsAvailable) {
+        this.slotsAvailable = slotsAvailable;
+    }
+
+    public Hospital getHospital() {
+        return hospital;
+    }
+
+    public void setHospital(Hospital hospital) {
+        this.hospital = hospital;
+    }
     
+    @Override
+    public String toString(){
+        return String.valueOf(doctorID);
+    }
     
     
 }

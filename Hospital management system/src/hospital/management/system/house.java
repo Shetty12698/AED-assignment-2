@@ -9,33 +9,40 @@ import java.util.ArrayList;
  *
  * @author SHREYAS
  */
-public class house {
-    private String housename;
-    private ArrayList<person> persons;
+public class House extends Community{
+    
+    public String houseNumber;
+    public int zip;
+    String streetName;
+
+    public String getHouseNumber() {
+        return houseNumber;
+    }
+
+    public void setHouseNumber(String houseNumber) {
+        this.houseNumber = houseNumber;
+    }
+
+    public int getZip() {
+        return zip;
+    }
+
+    public void setZip(int zip) {
+        this.zip = zip;
+    }
+
+    public String getStreetName() {
+        return streetName;
+    }
+
+    public void setStreetName(String streetName) {
+        this.streetName = streetName;
+    }
     
     
-    public house(String housename, ArrayList<person> persons) {
-        this.housename = housename;
-        this.persons = persons;
-    }
-
-    public String getHousename() {
-        return housename;
-    }
-
-    public void setHousename(String housename) {
-        this.housename = housename;
-    }
-
-    public ArrayList<person> getPersons() {
-        return persons;
-    }
-
-    public void setPersons(ArrayList<person> persons) {
-        this.persons = persons;
-    }
     
+    public House(){
+}
     
-
     
 }

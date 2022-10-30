@@ -9,33 +9,24 @@ import java.util.ArrayList;
  *
  * @author SHREYAS
  */
-public class community {
-    private String communityname;
-    private ArrayList<house> communityhouses;
+public class Community extends City{
     
-    public community(String communityname, ArrayList<house> communityhouses) {
-        this.communityname = communityname;
-        this.communityhouses =  communityhouses;
+    public String communityName;
+
+    public String getCommunityName() {
+        return communityName;
     }
 
-    public String getCommunityname() {
-        return communityname;
+    public void setCommunityName(String communityName) {
+        this.communityName = communityName;
     }
-
-    public void setCommunityname(String communityname) {
-        this.communityname = communityname;
-    }
-
-    public ArrayList<house> getCommunityhouses() {
-        return communityhouses;
-    }
-
-    public void setCommunityhouses(ArrayList<house> communityhouses) {
-        this.communityhouses = communityhouses;
-    }
-
+    
+    
+   
     
 }
+    
+
     
   
     

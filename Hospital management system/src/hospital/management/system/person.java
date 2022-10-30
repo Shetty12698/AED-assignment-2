@@ -4,26 +4,48 @@
  */
 package hospital.management.system;
 
+import java.util.Date;
+
 
 /**
  *
  * @author SHREYAS
  */
-public class person {
-    private String name;
-    private double age;
-    private patient Patient;
-    private String password;
-    private String login;
+public class Person {
     
-    public person(String name, double age, patient Patient, String password, String login) {
-        this.name = name;
-        this.age = age;
-        this.Patient = Patient;
-        this.password = password;
-        this.login = login;
+    public String name;
+    public int age;
+    public long contactDetails;
+    public String emailId;
+    public String gender;
+    public int personId;
+    public String password;
+    public Date date;
+    //public String rePassword;
+
+    
+    
+    public House residence = new House();
+    public Hospital hospital = new Hospital();
+    
+    
+    public Person(){
     }
     
+    public Person(String name, int age, long contactDetails, String emailId, String gender,String state, String houseNumber, String streetName,  int zip, String cityName, String communityName, String password){
+        this.name = name;
+        this.contactDetails = contactDetails;
+        this.emailId = emailId;
+        this.gender = gender;
+        this.residence.houseNumber = houseNumber;
+        this.residence.streetName = streetName;
+        this.residence.state = state;
+        this.residence.communityName= communityName;
+        this.residence.cityName = cityName;
+        this.residence.zip = zip;
+        this.password = password;
+        
+    }
 
     public String getName() {
         return name;
@@ -33,21 +55,46 @@ public class person {
         this.name = name;
     }
 
-    public double getAge() {
+    public int getAge() {
         return age;
     }
 
-    public void setAge(double age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    public patient getPatient() {
-        return Patient;
+    public long getContactDetails() {
+        return contactDetails;
     }
 
-    public void setPatient(patient Patient) {
-        this.Patient = Patient;
+    public void setContactDetails(long contactDetails) {
+        this.contactDetails = contactDetails;
     }
+
+    public String getEmailId() {
+        return emailId;
+    }
+
+    public void setEmailId(String emailId) {
+        this.emailId = emailId;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public House getResidence() {
+        return residence;
+    }
+
+    public void setResidence(House residence) {
+        this.residence = residence;
+    }
+
 
     public String getPassword() {
         return password;
@@ -57,16 +104,31 @@ public class person {
         this.password = password;
     }
 
-    public String getLogin() {
-        return login;
+//    public String getRePassword() {
+//        return rePassword;
+//    }
+//
+//    public void setRePassword(String rePassword) {
+//        this.rePassword = rePassword;
+//    }
+
+    public int getPersonId() {
+        return personId;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setPersonId(int personId) {
+        this.personId = personId;
     }
-    
-    
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
+    }
     
     
     
 }
+

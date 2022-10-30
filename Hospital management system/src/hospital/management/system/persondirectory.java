@@ -9,24 +9,17 @@ import java.util.ArrayList;
  *
  * @author SHREYAS
  */
-public class persondirectory {
-    ArrayList<person> personlist;
-    
-    public persondirectory(ArrayList<person> personlist) {
-        this.personlist = personlist;
+public class PersonDirectory {
+    public static ArrayList<Person>personDir = new ArrayList<Person>();
+
+    public static ArrayList<Person> getPersonDir() {
+        return personDir;
     }
 
-    public ArrayList<person> getPersonlist() {
-        return personlist;
+    public static void setPersonDir(ArrayList<Person> personDir) {
+        PersonDirectory.personDir = personDir;
     }
 
-    public void setPersonlist(ArrayList<person> personlist) {
-        this.personlist = personlist;
-    }
-    
-    public void addnewperson(person persons) {
-        personlist.add(persons);
-    }
     
     
     

@@ -10,26 +10,18 @@ import java.util.ArrayList;
  *
  * @author SHREYAS
  */
-public class patientdirectory {
-    private ArrayList<patient> patientList;
+public class PatientDirectory {
+    public static ArrayList<Patient>patientDir = new ArrayList<Patient>();
     
     
-    public patientdirectory(ArrayList<patient> patientList) {
-        this.patientList = patientList;
+  
+
+    public static ArrayList<Patient> getPatientDir() {
+        return patientDir;
     }
 
-    public ArrayList<patient> getPatientList() {
-        return patientList;
+    public static void setPatientDir(ArrayList<Patient> patientDir) {
+        PatientDirectory.patientDir = patientDir;
     }
-
-    public void setPatientList(ArrayList<patient> patientList) {
-        this.patientList = patientList;
-    }
-    
-    public void addnewPatient(patient patient) {
-        patientList.add(patient);
-    }
-    
 }
-    
 
