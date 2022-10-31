@@ -365,20 +365,7 @@ public class patientlogin extends javax.swing.JFrame {
 
     private void buttonupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonupdateActionPerformed
         // TODO add your handling code here:
-        int selectedRowIndex1=personTable.getSelectedRow();
-        DefaultTableModel model1 = (DefaultTableModel) personTable.getModel();
-        Person p1 =(Person)model1.getValueAt(selectedRowIndex1,0);
-        p1.setName(personName.getText());
-        p1.setAge(Integer.parseInt(personAge.getText()));
-        p1.setContactDetails((personContact.getText()));
-        p1.setEmailId(personEmailID.getText()) ;
-        p1.residence.community (personCommunity.getText());
-        p1.residence.houseNumber = personHouse.getText();
-        p1.residence.zip = Integer.parseInt(personZipCode.getText());
-        p1.residence.cityName = personCity.getText();
-        p1.residence.state = personState.getText();
-        p1.setPersonId(Integer.parseInt(personID.getText()));
-        personDispTable();
+        
         
     }//GEN-LAST:event_buttonupdateActionPerformed
 
