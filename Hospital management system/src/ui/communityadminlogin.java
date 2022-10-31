@@ -131,10 +131,7 @@ public class communityadminlogin extends javax.swing.JFrame {
 
     private void buttoncreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttoncreateActionPerformed
         // TODO add your handling code here:
-        AddCityJPanel addCityJPanel = new AddCityJPanel(displayJPanel,system);
-        displayJPanel.add("AddCityPanel", addCityJPanel);
-        CardLayout cardLayout = (CardLayout) displayJPanel.getLayout();
-        cardLayout.next(displayJPanel);
+       
     }//GEN-LAST:event_buttoncreateActionPerformed
 
     private void buttonviewupdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonviewupdateActionPerformed

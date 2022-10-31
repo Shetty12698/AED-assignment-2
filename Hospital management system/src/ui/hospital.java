@@ -14,7 +14,9 @@ import hospital.management.system.PersonDirectory;
 import hospital.management.system.VitalSigns;
 import hospital.management.system.VitalSignsHistory;
 import javax.swing.JOptionPane;
+import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 
 /**
  *
@@ -247,6 +249,11 @@ public class hospital extends javax.swing.JFrame {
         buttondelete.setText("delete");
 
         buttonsearch.setText("search");
+        buttonsearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonsearchActionPerformed(evt);
+            }
+        });
 
         labelhospitalregistration.setText("hospital registration");
 
@@ -290,8 +297,8 @@ public class hospital extends javax.swing.JFrame {
                                 .addComponent(buttondelete))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(37, 37, 37)
-                        .addComponent(fieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(120, 120, 120)
+                        .addComponent(fieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)
                         .addComponent(buttonsearch))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
@@ -318,16 +325,13 @@ public class hospital extends javax.swing.JFrame {
                     .addComponent(buttonview)
                     .addComponent(buttonupdate)
                     .addComponent(buttondelete))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(58, 58, 58)
-                        .addComponent(fieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(buttonsearch)))
+                .addGap(58, 58, 58)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(fieldsearch, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(buttonsearch))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(59, Short.MAX_VALUE))
+                .addContainerGap(58, Short.MAX_VALUE))
         );
 
         pack();
@@ -360,7 +364,7 @@ public class hospital extends javax.swing.JFrame {
         // TODO add your handling code here:
         Hospital hosp=new Hospital();
         hosp.setHospitalName(hNametxt.getText());
-        //        pt1.person.setAge(Integer.parseInt(patientAge.getText()));
+        
         hosp.setHospitalLincenseNumber(Integer.parseInt(hLicenseNumbertxt.getText()));
         hosp.setHospitalAddress((hAddresstxt.getText()));
         hosp.residence.setCommunityName(hCommunitytxt.getText()) ;
@@ -392,6 +396,14 @@ public class hospital extends javax.swing.JFrame {
         hCitytxt.setText(selectedHosp.residence.getCityName());
         hStatetxt.setText(selectedHosp.residence.getState());
     }//GEN-LAST:event_buttonviewActionPerformed
+
+    private void buttonsearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonsearchActionPerformed
+        // TODO add your handling code here:
+        DefaultTableModel model=(DefaultTableModel) HospitalTable.getModel();
+        TableRowSorter<DefaultTableModel> row=new TableRowSorter<DefaultTableModel>(model);
+        HospitalTable.setRowSorter(row);
+        row.setRowFilter(RowFilter.regexFilter(fieldsearch.getText().trim()));
+    }//GEN-LAST:event_buttonsearchActionPerformed
 
     /**
      * @param args the command line arguments
