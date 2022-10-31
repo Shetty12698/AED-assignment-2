@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
     public class DoctorDirectory {
     
-    public static ArrayList<Doctor> doctorList = new ArrayList<Doctor>();
+    public static ArrayList<Doctor> doctorrecords = new ArrayList<Doctor>();
    
 
 public static Doctor doctor1(){
@@ -22,12 +22,12 @@ public static Doctor doctor1(){
         
     }
 
-    public static ArrayList<Doctor> getDoctorList() {
-        return doctorList;
+    public static ArrayList<Doctor> getDoctorrecords() {
+        return doctorrecords;
     }
 
     public static void setDoctorList(ArrayList<Doctor> doctorList) {
-        DoctorDirectory.doctorList = doctorList;
+        DoctorDirectory.doctorrecords = doctorList;
     }
 
     public Doctor addNewDoctor(){
@@ -35,17 +35,17 @@ public static Doctor doctor1(){
         Doctor newDr = new Doctor();
         //System.out.println("hereeeeeeeeee");
         //System.out.println(newEmployee);
-        doctorList.add(newDr);
+        doctorrecords.add(newDr);
         return newDr;
     }
     
     public void deleteDoctor(Doctor d){
-        doctorList.remove(d);
+        doctorrecords.remove(d);
     }
     
     public boolean checkDID(int dID){
         int flag = 0;
-        for(Doctor d: doctorList){
+        for(Doctor d: doctorrecords){
             if(d.getDoctorID() == dID)
                 flag = 1;
             else

@@ -10,43 +10,14 @@ import java.util.List;
  *
  * @author SHREYAS
  */
-public class system {
-    private PatientDirectory Patientdirectory;
-    private PersonDirectory Persondirectory;
-    private ArrayList<City> cities;
-    
-    public system(PatientDirectory Patientdirectory, PersonDirectory Persondirectory, ArrayList<City> cities) {
-        this.Patientdirectory = Patientdirectory;
-        this.Persondirectory = Persondirectory;
-        this.cities = cities;
-        
-    }
-
-    public PatientDirectory getPatientdirectory() {
-        return Patientdirectory;
-    }
-
-    public void setPatientdirectory(PatientDirectory Patientdirectory) {
-        this.Patientdirectory = Patientdirectory;
-    }
-
-    public PersonDirectory getPersondirecory() {
-        return Persondirectory;
-    }
-
-    public void setPersondirecory(PersonDirectory Persondirecory) {
-        this.Persondirectory = Persondirecory;
-    }
-
-    public ArrayList<City> getCities() {
-        return cities;
-    }
-
-    public void setCities(ArrayList<City> cities) {
-        this.cities = cities;
-    }
+public class System extends Patient {
     
     
-    
-    
+     VitalSignsHistory vitalDir;
+     PatientDirectory patientDir;
+     PersonDirectory personDir;
+     DoctorDirectory records;
+     HospitalDirectory hospitalDir;
+     EncounterHistory encounterHist;
+     
 }

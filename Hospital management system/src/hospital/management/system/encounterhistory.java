@@ -13,37 +13,42 @@ import java.util.Date;
  */
 public class EncounterHistory {
     
-    public static ArrayList<Encounter> encounterList = new ArrayList<Encounter>();
+    public static ArrayList<Encounter> encounterHist = new ArrayList<Encounter>();
     
     public EncounterHistory(){
-        this.encounterList = new ArrayList<Encounter>();
+        this.encounterHist = new ArrayList<Encounter>();
     }    
 
-    public static ArrayList<Encounter> getEncounterList() {
-        return encounterList;
+    public static ArrayList<Encounter> getEncounterHist() {
+        return encounterHist;
     }
 
-    public static void setEncounterList(ArrayList<Encounter> encounterList) {
-        EncounterHistory.encounterList = encounterList;
+    public static void setEncounterHist(ArrayList<Encounter> encounterList) {
+        EncounterHistory.encounterHist = encounterList;
     }
 
     
 
     public Encounter addNewEncounter(){
         Encounter newEncounter = new Encounter();
-        encounterList.add(newEncounter);
+        encounterHist.add(newEncounter);
         return newEncounter;
     }
     
     public void deleteEncounter(Encounter e){
-        encounterList.remove(e);
+        encounterHist.remove(e);
     } 
     
     public Encounter addNewEncounter(int encounterID, Date encounterDate,LocalTime encounterTime, int patientId, int doctorId, String encDiagnosis, String symptoms){
         Encounter enc = new Encounter();
-        encounterList.add(enc);
+        encounterHist.add(enc);
         return enc;
         
+    }
+    public Encounter addNewEncounter(int encounterID, Date encounterDate, LocalTime encounterTime,  int patientId, int doctorID){
+        Encounter enc = new Encounter( encounterID,  encounterDate,  encounterTime,   patientId, doctorID);
+        encounterHist.add(enc);
+        return enc;
     }
     
 }

@@ -18,6 +18,8 @@ public class Encounter extends VitalSigns{
     private LocalTime encounterTime;
     public String encDiagnosis;
     public String symptoms;
+    private String name;
+    private int patientId;
     
     public Doctor doctor = new Doctor();
     public Patient patient = new Patient();
@@ -31,6 +33,14 @@ public class Encounter extends VitalSigns{
         this.encounterTime = encounterTime;
         this.doctor.name = name;
         this.name = name;
+        this.patientId = patientId;
+        this.doctor.doctorID = doctorID;
+        
+    }
+    public Encounter(int encounterID, Date encounterDate, LocalTime encounterTime,  int patientId, int doctorID){
+        this.encounterID =encounterID;
+        this.encounterDate =encounterDate;
+        this.encounterTime = encounterTime;
         this.patientId = patientId;
         this.doctor.doctorID = doctorID;
         
@@ -49,6 +59,22 @@ public class Encounter extends VitalSigns{
         this.sugarLevel=sugarLevel;
         this.bodyTemp=bodyTemp;
         this.heartRate=heartRate; 
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getPatientId() {
+        return patientId;
+    }
+
+    public void setPatientId(int patientId) {
+        this.patientId = patientId;
     }
    
 

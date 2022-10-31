@@ -12,30 +12,28 @@ import java.util.ArrayList;
  */
 public class HospitalDirectory {
     
-    public static ArrayList<Hospital> hospitalList = new ArrayList<Hospital>();
+    public static ArrayList<Hospital> hospitalDir = new ArrayList<Hospital>();
     
-//    public HospitalDirectory(){
-//        this.hospitalList = new ArrayList<Hospital>();
-//    }
 
-    public static ArrayList<Hospital> getHospitalList() {
-        return hospitalList;
+
+    public static ArrayList<Hospital> getHospitalDir() {
+        return hospitalDir;
     }
 
-    public static void setHospitalList(ArrayList<Hospital> hospitalList) {
-        HospitalDirectory.hospitalList = hospitalList;
+    public static void setHospitalDir(ArrayList<Hospital> hospitalList) {
+        HospitalDirectory.hospitalDir = hospitalDir;
     }
 
     
     
     public Hospital addNewHospital(){
         Hospital newHospital = new Hospital();
-        hospitalList.add(newHospital);
+        hospitalDir.add(newHospital);
         return newHospital;
     }
     
     public void deleteHospital(Hospital h){
-        hospitalList.remove(h);
+        hospitalDir.remove(h);
     }
     
     

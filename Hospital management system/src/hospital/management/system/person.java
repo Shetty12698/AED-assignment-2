@@ -21,7 +21,7 @@ public class Person {
     public int personId;
     public String password;
     public Date date;
-    //public String rePassword;
+    
 
     
     
@@ -104,13 +104,7 @@ public class Person {
         this.password = password;
     }
 
-//    public String getRePassword() {
-//        return rePassword;
-//    }
-//
-//    public void setRePassword(String rePassword) {
-//        this.rePassword = rePassword;
-//    }
+
 
     public int getPersonId() {
         return personId;

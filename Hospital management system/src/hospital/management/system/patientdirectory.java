@@ -23,5 +23,25 @@ public class PatientDirectory {
     public static void setPatientDir(ArrayList<Patient> patientDir) {
         PatientDirectory.patientDir = patientDir;
     }
+    
+    public void deletePatient(Patient p){
+    patientDir.remove(p);
+    }
+    public boolean checkPID(int pID){
+        int flag = 0;
+        for(Patient p: getPatientDir()){
+            if(p.getPatientId()== pID)
+                flag = 1;
+            else
+                flag = 0;
+        }
+        if(flag>0)
+            return true;
+        else
+            return false;
+    }
+    
+    
+    
 }
 
