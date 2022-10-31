@@ -4,6 +4,8 @@
  */
 package ui;
 
+import static hospital.management.system.PatientDirectory.patientDir;
+
 /**
  *
  * @author SHREYAS

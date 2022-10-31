@@ -113,7 +113,7 @@ public class communityentertoaccess extends javax.swing.JFrame {
         {
             fieldpassword.setText("");
             fieldlogin.setText("");
-        communityadminlogin ml = new communityadminlogin();
+        CommunityPanel ml = new CommunityPanel();
         ml.setVisible(true);
         this.dispose();
             

@@ -373,7 +373,7 @@ public class hospital extends javax.swing.JFrame {
         hosp.residence.state = hStatetxt.getText();
         hosp.setHospitalWard(Integer.parseInt(hNoWardstxt.getText()));
 
-        HospitalDirectory.hospitalList.add(hosp);
+        HospitalDirectory.hospitalDir.add(hosp);
         JOptionPane.showMessageDialog(this, "Person Successfully Added");
         hospDispTable();
     }//GEN-LAST:event_buttoncreateActionPerformed
@@ -443,7 +443,7 @@ public class hospital extends javax.swing.JFrame {
         DefaultTableModel model1 = (DefaultTableModel) HospitalTable.getModel();
         model1.setRowCount(0);
         System.out.println("Done");
-        for (Hospital h:HospitalDirectory.getHospitalList()){
+        for (Hospital h:HospitalDirectory.getHospitalDir()){
             Object[] row=new Object[8];
             row[0]=h;
             row[1]=h.getHospitalName();
