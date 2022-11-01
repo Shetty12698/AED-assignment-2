@@ -57,6 +57,7 @@ public class LoginPatient extends javax.swing.JFrame {
         DocAppointment = new javax.swing.JButton();
         patAccount = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -86,6 +87,13 @@ public class LoginPatient extends javax.swing.JFrame {
 
         jLabel2.setText("Patient Home Screen");
 
+        jButton1.setText("cancel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -97,11 +105,14 @@ public class LoginPatient extends javax.swing.JFrame {
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(EncounterHist, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(DocAppointment, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(patAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(patAccount, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(88, 88, 88)
+                                .addComponent(jButton1))))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGap(328, 328, 328)
                         .addComponent(jLabel2)))
-                .addContainerGap(522, Short.MAX_VALUE))
+                .addContainerGap(374, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -109,7 +120,9 @@ public class LoginPatient extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel2)
                 .addGap(28, 28, 28)
-                .addComponent(patAccount)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(patAccount)
+                    .addComponent(jButton1))
                 .addGap(51, 51, 51)
                 .addComponent(DocAppointment)
                 .addGap(68, 68, 68)
@@ -155,7 +168,18 @@ public class LoginPatient extends javax.swing.JFrame {
 
     private void patAccountActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_patAccountActionPerformed
         // TODO add your handling code here:
+        this.hide();
+        PatientAccount lo = new PatientAccount();
+        lo.setVisible(true);
     }//GEN-LAST:event_patAccountActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+         this.hide();
+        mainlogin lo = new mainlogin();
+        lo.setVisible(true);
+         
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -195,6 +219,7 @@ public class LoginPatient extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton DocAppointment;
     private javax.swing.JButton EncounterHist;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JButton patAccount;

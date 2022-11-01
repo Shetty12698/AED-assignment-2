@@ -101,7 +101,7 @@ public class systemadminlogin extends javax.swing.JFrame {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        patientdirectory pl = new patientdirectory();
+        systemadminpatientdirectory pl = new systemadminpatientdirectory();
         pl.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
