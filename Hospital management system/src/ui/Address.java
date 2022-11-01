@@ -16,6 +16,7 @@ public class Address extends javax.swing.JFrame {
     State cityDir;
     City communityList;
     
+    
 
     /**
      * Creates new form Address

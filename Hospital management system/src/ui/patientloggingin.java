@@ -139,19 +139,19 @@ public class patientloggingin extends javax.swing.JFrame {
     private void viewDetsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewDetsBtnActionPerformed
         // TODO add your handling code here:
         PatientAccount ptDets = new PatientAccount(patientDir,patientUsername);
-        SplitPane.setRightComponent(ptDets);
+        jSplitPane1.setRightComponent(ptDets);
     }//GEN-LAST:event_viewDetsBtnActionPerformed
 
     private void BookPatientEncounterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BookPatientEncounterBtnActionPerformed
         // TODO add your handling code here:
         PatientAccount ptDets = new PatientAccount(patientDir,patientUsername);
-        SplitPane.setRightComponent(ptDets);
+        jSplitPane1.setRightComponent(ptDets);
     }//GEN-LAST:event_BookPatientEncounterBtnActionPerformed
 
     private void ViewEncounterBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ViewEncounterBtnActionPerformed
         // TODO add your handling code here:
         EncounterPatientHistory ptEncDets = new EncounterPatientHistory(patient.getPatientId());
-        SplitPane.setRightComponent(ptEncDets);
+        jSplitPane1.setRightComponent(ptEncDets);
     }//GEN-LAST:event_ViewEncounterBtnActionPerformed
 
     /**

@@ -4,6 +4,17 @@
  */
 package ui;
 
+import hospital.management.system.City;
+import hospital.management.system.Community;
+import hospital.management.system.House;
+import hospital.management.system.State;
+import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.JOptionPane;
+import static javax.swing.JOptionPane.ERROR_MESSAGE;
+import static javax.swing.JOptionPane.INFORMATION_MESSAGE;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author SHREYAS
@@ -13,6 +24,52 @@ public class HousePanel extends javax.swing.JFrame {
     /**
      * Creates new form HousePanel
      */
+    City communityDir;
+    public HousePanel(City communityDir) {
+        initComponents();
+        generateCityDropdown();
+        generateCommunityDropdown();
+        DefaultTableModel model = (DefaultTableModel) tblHouse.getModel();
+        model.setRowCount(0);
+        updateCityTable();
+        this.communityDir = communityDir;
+    }
+    
+    public void generateCommunityDropdown() {
+        ArrayList<String> communityDropdown = new ArrayList<>();
+        City.communityList.stream().filter(communityValue -> (communityValue.cityName == null ? comboCity.getSelectedItem().toString() == null : communityValue.cityName.equals(comboCity.getSelectedItem().toString()))).forEachOrdered(communityValue -> {
+            communityDropdown.add(String.valueOf(communityValue.communityName));
+        });
+        String[] communitySDropdown = communityDropdown.toArray(new String[communityDropdown.size()]);
+        DefaultComboBoxModel<String> SDropdownModel = new DefaultComboBoxModel<>(communitySDropdown);
+        this.comboCommunity.setModel(SDropdownModel);
+    }
+    
+    public void generateCityDropdown() {
+        
+        //Dropdown for city
+        System.out.println("-----");
+        System.out.println(State.cityDir);
+        //Dropdown for city
+        ArrayList<String> cityDropdown = new ArrayList<>();
+        for (int i = 0; i < State.cityDir.size(); i++) {
+            cityDropdown.add(State.cityDir.get(i).cityName);
+        }
+         
+        String[] citySDropdown = cityDropdown.toArray(new String[cityDropdown.size()]);
+        DefaultComboBoxModel<String> yearsSDropdownModel = new DefaultComboBoxModel<>(citySDropdown);
+       comboCity.setModel(yearsSDropdownModel);
+
+    }
+    
+    public void updateCityTable() {
+        DefaultTableModel model = (DefaultTableModel) tblHouse.getModel();
+        model.setRowCount(0);
+        for (int i = 0; i < Community.houseList.size(); i++) {
+            Object[] row = {City.state, Community.houseList.get(i).cityName, Community.houseList.get(i).communityName, Community.houseList.get(i).houseNumber};
+            model.addRow(row);
+        }
+    }
     public HousePanel() {
         initComponents();
     }
@@ -26,21 +83,150 @@ public class HousePanel extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lblCommunity2 = new javax.swing.JLabel();
+        lblCommunity1 = new javax.swing.JLabel();
+        lblCommunity = new javax.swing.JLabel();
+        lblCommunity3 = new javax.swing.JLabel();
+        txtCommunity1 = new javax.swing.JTextField();
+        txtHouse = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblHouse = new javax.swing.JTable();
+        comboCity = new javax.swing.JComboBox<>();
+        comboCommunity = new javax.swing.JComboBox<>();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        lblCommunity2.setText("state");
+
+        lblCommunity1.setText("city");
+
+        lblCommunity.setText("community");
+
+        lblCommunity3.setText("house");
+
+        txtCommunity1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtCommunity1ActionPerformed(evt);
+            }
+        });
+
+        btnAdd.setText("add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+
+        tblHouse.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "state", "city", "community", "house"
+            }
+        ));
+        jScrollPane1.setViewportView(tblHouse);
+
+        comboCity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        comboCommunity.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(101, 101, 101)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblCommunity2)
+                                        .addGap(133, 133, 133))
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                        .addComponent(lblCommunity1)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtCommunity1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lblCommunity)
+                                    .addComponent(lblCommunity3))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 99, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtHouse, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(186, 186, 186)
+                        .addComponent(btnAdd)))
+                .addGap(294, 294, 294))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommunity2)
+                    .addComponent(txtCommunity1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommunity1)
+                    .addComponent(comboCity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCommunity)
+                    .addComponent(comboCommunity, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHouse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCommunity3))
+                .addGap(12, 12, 12)
+                .addComponent(btnAdd)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void txtCommunity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCommunity1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtCommunity1ActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+         String errorMessage = "";
+        House house = new House();
+
+        if (comboCommunity.getSelectedIndex() == -1) {
+            errorMessage += "Please select City! \n";
+        }
+        String houseErrorMessage = house.validateHouse(txtHouse.getText());
+        errorMessage += houseErrorMessage;
+
+        if (house.alreadtExists(comboCommunity.getSelectedItem().toString(), txtHouse.getText())) {
+            errorMessage += "House already registered with the selected Community \n";
+        }
+        if (errorMessage.length() != 0) {
+            JOptionPane.showMessageDialog(this, errorMessage, "Add House", ERROR_MESSAGE);
+        } else {
+            house.houseNumber = txtHouse.getText();
+            house.communityName = comboCommunity.getSelectedItem().toString();
+            house.cityName = comboCity.getSelectedItem().toString();
+            Community.houseList.add(house);
+            updateCityTable();
+            JOptionPane.showMessageDialog(this, "Successfully Added", "Addition", INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -78,5 +264,16 @@ public class HousePanel extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
+    private javax.swing.JComboBox<String> comboCity;
+    private javax.swing.JComboBox<String> comboCommunity;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lblCommunity;
+    private javax.swing.JLabel lblCommunity1;
+    private javax.swing.JLabel lblCommunity2;
+    private javax.swing.JLabel lblCommunity3;
+    private javax.swing.JTable tblHouse;
+    private javax.swing.JTextField txtCommunity1;
+    private javax.swing.JTextField txtHouse;
     // End of variables declaration//GEN-END:variables
 }
