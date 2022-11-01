@@ -29,7 +29,6 @@ public class communityadminlogin extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonviewupdate = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         buttoncreate = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -44,9 +43,6 @@ public class communityadminlogin extends javax.swing.JFrame {
                 buttonviewupdateActionPerformed(evt);
             }
         });
-
-        jLabel1.setFont(new java.awt.Font("Segoe UI Black", 1, 18)); // NOI18N
-        jLabel1.setText("display cities");
 
         buttoncreate.setText("create");
         buttoncreate.addActionListener(new java.awt.event.ActionListener() {
@@ -92,31 +88,24 @@ public class communityadminlogin extends javax.swing.JFrame {
                 .addComponent(buttoncancel)
                 .addGap(248, 248, 248))
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(226, 226, 226)
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(39, 39, 39)
-                        .addComponent(buttoncreate)
-                        .addGap(101, 101, 101)
-                        .addComponent(buttonviewupdate)
-                        .addGap(75, 75, 75)
-                        .addComponent(buttondelete)))
+                .addGap(39, 39, 39)
+                .addComponent(buttoncreate)
+                .addGap(101, 101, 101)
+                .addComponent(buttonviewupdate)
+                .addGap(75, 75, 75)
+                .addComponent(buttondelete)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(15, 15, 15)
-                .addComponent(jLabel1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+                        .addGap(59, 59, 59)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap(356, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(buttoncreate)
                             .addComponent(buttonviewupdate)
@@ -191,7 +180,6 @@ public class communityadminlogin extends javax.swing.JFrame {
     private javax.swing.JButton buttoncreate;
     private javax.swing.JButton buttondelete;
     private javax.swing.JButton buttonviewupdate;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
