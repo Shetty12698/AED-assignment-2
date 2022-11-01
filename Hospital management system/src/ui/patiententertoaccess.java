@@ -106,7 +106,7 @@ public class patiententertoaccess extends javax.swing.JFrame {
         {
             labelpassword.setText("");
             textfieldlogin.setText("");
-        patientlogin ml = new patientlogin();
+        LoginPatient ml = new LoginPatient();
         ml.setVisible(true);
         this.dispose();
             

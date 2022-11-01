@@ -335,6 +335,11 @@ public class DoctorRegister extends javax.swing.JFrame {
 
         doctorCanceltBtn.setText("Cancel");
         doctorCanceltBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        doctorCanceltBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                doctorCanceltBtnActionPerformed(evt);
+            }
+        });
 
         doctorRegisterBtn.setText("Register");
         doctorRegisterBtn.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -1000,6 +1005,13 @@ public class DoctorRegister extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this,"Doctor Deleted");
         populateDoctorTable();
     }//GEN-LAST:event_modifyDoctorDeleteBtnActionPerformed
+
+    private void doctorCanceltBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_doctorCanceltBtnActionPerformed
+        // TODO add your handling code here:
+        this.hide();
+        doctorsubform lo = new doctorsubform();
+        lo.setVisible(true);
+    }//GEN-LAST:event_doctorCanceltBtnActionPerformed
     
     boolean Validation()
         {
